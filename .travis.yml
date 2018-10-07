@@ -13,6 +13,6 @@ script:
 
 deploy:
   provider: azure_web_apps
+  skip_cleanup: true
   local_dir: dist
   verbose: true
-skip_cleanup: true
