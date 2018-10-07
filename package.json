@@ -1,0 +1,29 @@
+{
+  "name": "xbox-clips-node-server",
+  "version": "0.0.1",
+  "description": "REST server setup for Xbox Clips",
+  "main": "index.js",
+  "scripts": {
+	"build": "tsc",
+	"dev": "ts-node ./lib/server.ts",
+	"start": "nodemon ./dist/server.js",
+	"prod": "npm run build && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaron-bond/xbox-clips-node-server.git"
+  },
+  "author": "aaron-bond",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaron-bond/xbox-clips-node-server/issues"
+  },
+  "homepage": "https://aaron-bond.github.io/xbox-clips",
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4"
+  }
+}
