@@ -8,7 +8,7 @@ export class RouteProvider {
     public routes(app: Application): void {
         app.route("/").get((req: Request, res: Response) => this._handleBaseRequest(req, res));
 
-        app.route("/clips").get((req: Request, res: Response) => this._clips.GetClipsForGamertag(req, res));
+        app.route("/clips/:gamertag").get((req: Request, res: Response) => this._clips.GetClipsForGamertag(req, res));
     }
 
     private _handleBaseRequest(request: Request, response: Response): void {
