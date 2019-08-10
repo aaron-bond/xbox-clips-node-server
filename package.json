@@ -28,6 +28,7 @@
     "dotenv": "8.0.0"
   },
   "devDependencies": {
+    "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   }
 }

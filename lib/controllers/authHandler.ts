@@ -3,7 +3,7 @@ import * as XboxLiveAPI from '@xboxreplay/xboxlive-api';
 
 export class AuthHandler {
 
-	private _userHash: string = "";
+    private _userHash: string = "";
     private _XSTSToken: string =  "";    
     private _tokenExpires: Date = null;
 
@@ -49,9 +49,10 @@ export class AuthHandler {
             }
             else {
                 XboxLiveAuth.authenticate(process.env.EMAIL, process.env.PASS)
-                    .then(response => { 
-                        this._handleAuthSuccess(response);
+                    .then(response => {
+                        console.log("authenticated");
 
+                        this._handleAuthSuccess(response);
                         resolve();
                     })
                     .catch(error => this._handleAuthFailed(error));
@@ -61,13 +62,13 @@ export class AuthHandler {
         return promise;
     }
 
-	private _handleAuthSuccess(response: XboxLiveAuth.AuthUserResponse): void {
-		this._userHash = response.userHash;
-		this._XSTSToken = response.XSTSToken;
-		this._tokenExpires = new Date(response.expiresOn);
-	}
+    private _handleAuthSuccess(response: XboxLiveAuth.AuthUserResponse): void {
+        this._userHash = response.userHash;
+        this._XSTSToken = response.XSTSToken;
+        this._tokenExpires = new Date(response.expiresOn);
+    }
 
-	private _handleAuthFailed(error): void {
+    private _handleAuthFailed(error): void {
         console.error(error);        
     }    
 }
