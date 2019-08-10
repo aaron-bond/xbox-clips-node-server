@@ -26,5 +26,8 @@
     "express": "^4.17.0",
     "nodemon": "^1.19.1",
     "dotenv": "8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
   }
 }
