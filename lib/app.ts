@@ -2,6 +2,8 @@ import * as bodyParser from "body-parser";
 import * as express from "express";
 import { RouteProvider } from "./routes";
 
+var cors = require('cors');
+
 class App {
     public app: express.Application;
     public routeProvider = new RouteProvider();
@@ -13,6 +15,10 @@ class App {
     }
 
     private config(): void {
+        
+        // Adding CORS header to allow all traffic
+        // TODO: restrict to whitelist
+        this.app.use(cors());
 
         // support application/json type post data
         this.app.use(bodyParser.json());
