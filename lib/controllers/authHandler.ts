@@ -50,8 +50,6 @@ export class AuthHandler {
             else {
                 XboxLiveAuth.authenticate(process.env.EMAIL, process.env.PASS)
                     .then(response => {
-                        console.log("authenticated");
-
                         this._handleAuthSuccess(response);
                         resolve();
                     })
