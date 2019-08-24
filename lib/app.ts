@@ -25,6 +25,9 @@ class App {
 
         // support application/x-www-form-urlencoded post data
         this.app.use(bodyParser.urlencoded({ extended: false }));
+
+        // serve up images from the public directory
+        this.app.use(express.static('lib/public'))
     }
 }
 
