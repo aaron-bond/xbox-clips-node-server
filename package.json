@@ -20,7 +20,7 @@
   "homepage": "https://aaron-bond.github.io/xbox-clips",
   "dependencies": {
     "@types/express": "^4.17.0",
-    "@xboxreplay/xboxlive-api": "^2.1.1",
+    "@xboxreplay/xboxlive-api": "^3.4.3",
     "@xboxreplay/xboxlive-auth": "^1.0.1",
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",

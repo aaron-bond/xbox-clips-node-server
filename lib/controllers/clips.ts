@@ -11,12 +11,12 @@ export class Clips {
     }
     
     private _handleGetAuthorizationSuccess(auth: XboxLiveAPI.XBLAuthorization, request: Request, response: Response): void {
-        XboxLiveAPI.getPlayerGameclips(request.params.gamertag, auth)
+        XboxLiveAPI.getPlayerGameClips(request.params.gamertag, auth)
             .then(clips => this._handleGetClipsSuccess(clips, response))
             .catch(error => this._authHandler.InvalidateAuthentication());
     }
 
-    private _handleGetClipsSuccess(clips: XboxLiveAPI.PlayerGameclipsResponse, response: Response): void {
+    private _handleGetClipsSuccess(clips: XboxLiveAPI.PlayerGameClipsResponse, response: Response): void {
         response.status(200).send(clips);
-    }    
+    }
 }

@@ -4,7 +4,7 @@ import * as XboxLiveAPI from '@xboxreplay/xboxlive-api';
 export class AuthHandler {
 
     private _userHash: string = "";
-    private _XSTSToken: string =  "";    
+    private _XSTSToken: string =  "";
     private _tokenExpires: Date = null;
 
     public constructor() {
@@ -48,6 +48,9 @@ export class AuthHandler {
                 resolve();
             }
             else {
+                console.log(process.env.EMAIL);
+                console.log(process.env.PASS);
+
                 XboxLiveAuth.authenticate(process.env.EMAIL, process.env.PASS)
                     .then(response => {
                         this._handleAuthSuccess(response);

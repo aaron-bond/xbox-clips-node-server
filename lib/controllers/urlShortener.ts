@@ -13,6 +13,8 @@ export class UrlShortener {
                 "Content-Type": "application/json"
             }
         };
+
+        console.log(req.body.longUrl);
         
         let body = {
             domain: "bit.ly",
@@ -23,6 +25,10 @@ export class UrlShortener {
             .then(response => {
                 res.status(200).send(response.data.link);
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                
+                res.status(500).send();
+            });
     }    
 }
